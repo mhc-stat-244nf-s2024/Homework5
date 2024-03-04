@@ -1,0 +1,68 @@
+---
+title: 'Homework 5: Multiple Contacts and Time-dependent Transition Probability'
+author: "YOUR NAME HERE"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(ggplot2)
+library(dplyr)
+```
+
+## Instructions:
+
+1. Please replace "YOUR NAME HERE" under author above with your name before you knit your final document for submission.
+2. All of your homework needs to be completed in this document, whether it requires R or just typed responses. As we incorporate more statistical computing into the course, it will be important that you are comfortable with R Markdown, so start now. Remember that R Markdown gives us a convenient framework for reproducible statistical reports because it contains a complete record of our analyses and conclusions.
+3. You may knit to PDF, HTML, or Word (click on the drop-down menu for Knit to choose the file output type). 
+4. Before submitting your work, please make sure the knitted file is well organized, legible, and looks the way you expect!
+5. Please include the names of any classmates with whom you worked on this homework, as well as any external resources that you might have used.
+6. This homework assignment is **due on Friday, March 8, 2024 and should be submitted to Gradescope**.
+
+- *Collaborators:*
+
+- *External resources:*
+
+## Computational and Conceptual Questions
+
+**Question CCQ 1. Consider an infection where the effective number of contacts per day is 2 and the duration of infectiousness is 3 days. What is the basic reproductive number?**
+
+
+
+**Question CCQ 2. Consider an infection where the basic reproductive number is 14 and the effective number of contacts is 2 per day. What is the duration of infectiousness (include appropriate time scale)?**
+
+
+
+**Question CCQ 3. Consider an infection where the basic reproductive number is 10 and the duration of infectiousness is 10 days. What is the effective number of contacts per day?**
+
+
+**Question CQ 4. Suppose $R_0$ is the identical in two populations, but one population is 500,000 and the other is 1 million. In which population will $\lambda_t$ be smaller for the same time point? Why?**
+
+
+## HIV
+
+For sexually-transmitted infections (primary mode of transmission for HIV), we need to make a slight modification to the $S\rightarrow I$ transition parameter. In this case, because sexual contacts are easy to track (relative to contacts associated with respiratory transmission, for example), we can decompose $c_e$ into two components, the number of sexual contacts per unit time ($k_s$), and the probability of infection given contact between a susceptible and infectious individual ($p^c(t)$). In this case, 
+
+$$\lambda_t=1-\exp\left\{- k_sp^c(t)\times \frac{I_{t-1}}{N}\right\};$$
+
+$k_sp^c(t)$ is replacing $c_e$ in this case. This allows us to investigate the effect of sexual activity level. As before, we will assume $p^c(t)$ is constant for now. 
+
+**(a) Modify your code from Homework 4 Part (b) **to include this new representation of $\lambda_t$**. You can assume that $k_s=3$ sexual contacts per week; $p^c(t)$ is given in Homework 5 for Part (b).**
+
+```{r}
+
+```
+
+**(b) Plot the results of your simulation (compartment versus time). For full credit, you should plot all the compartments in the same plot for full credit - the easiest way to do this is in ggplot2.**
+
+```{r}
+
+```
+
+
+**(c) How does this compare to the results you found in Homework 4 Part (b)? Which do you think is a more realistic depiction of this infection process?**
+
+
+
